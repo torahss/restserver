@@ -1,0 +1,43 @@
+
+{% load bootstrap4 %}       {# import bootstrap4/bootstrap3 #}
+{% bootstrap_css %}         {# Embed Bootstrap CSS #}
+{% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+
+{% block extrahead %}       {# Extra Resources Start #}
+{{ form.media }}            {# Form required JS and CSS #}
+{% endblock %}              {# Extra Resources End #}
+
+
+                                 "query": {
+                                     "bool": {
+                                         "must": [{
+                                             "match": {
+                                                 "station": "8472070FFDA1"
+                                             }
+                                         },
+                                             {
+                                                 "match": {
+                                                     "_type": "Practical"
+                                                 }
+                                             }]
+                                     }
+                                 },
+                                 "size": 1,
+                                 "aggregations": {
+                                     "dates_with_holes": {
+                                         "date_histogram": {
+                                             "field": "submit_date",
+                                             "interval": "day",
+                                             "min_doc_count": 0
+                                         },
+                                         "aggs": {
+                                             "the_avg": {
+                                                 "avg": {
+                                                     "field": "tpm",
+                                                     "missing": 0
+                                                 }
+                                             }
+                                         }
+                                     }
+                                 }
+                             })

@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+{% load staticfiles %}
+
+<html>
+<head>
+    <title>Rancidity</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/modules.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/modules.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/modules.css' %}">
+</head>
+<body>
+<!--
+<section>
+-->
+<div data-layout="_r">
+    <div data-layout="al16">
+        <h1>Gloquad Rancidity System</h1>
+    </div>
+</div>
+
+
+<!--
+<div data-layout="_r">
+    <h1> TEST SECTION</h1>
+    {{chart_x}}<br>
+    {{chart_y}}
+</div>
+
+<div data-layout="_r">
+    {{station}}
+</div>
+-->
+<!--
+</section>
+-->
+
+<!--
+  END MODULE AREA 1: Page Title 1
+-->
+<!--
+START MODULE AREA 2: Text Accordian
+-->
+<section>
+    <div data-layout="_r">
+        <div data-layout="de6">
+            <h2 class="MOD_TEXTACCORDION_Title" data-theme="_bb2">Rancidity Last Value</h2>
+            <table class="table">
+                <tr>
+                    <td><b>Station:</b></td>
+                    <td class="sn-value">{{station}}</td>
+                </tr>
+                <tr>
+                    <td><b>Date Time:</b></td>
+                    <td class="dt-value">{{submit_date}}</td>
+                </tr>
+                <tr>
+                    <td class="radonbq-key"><b>Rancidity :</b></td>
+                    <td class="radonbq-value">{{tpm}}</td>
+                </tr>
+            </table>
+
+            <h2 class="MOD_TEXTACCORDION_Title" data-theme="_bb2">Rancidity Assessment</h2>
+                    <!--{% if tpm <= 14 %}
+                        <span class="radon-range-good">
+                            <b><center><font size="20">Good</font></center></b>
+                          </span>
+                    {% elif tpm > 14 and tpm <= 22 %}
+                        <span class="radon-range-normal">
+                            <b><center><font size="20">Normal</font></center></b>
+                          </span>
+                    {% elif tpm > 22 and tpm <= 24 %}
+                        <span class="radon-range-warn">
+                            <b><center><font size="20">Bad</font></center></b>
+			            </span>
+                    {% else  %}
+                        <span class="radon-range-disconn">
+                            <b><center><font size="20">Worst</font></center></b>
+                          </span>
+                    {% endif %}
+                -->
+                {% if level == 0 %}
+                        <span class="radon-range-good">
+                            <b><center><font size="20">Good</font></center></b>
+                          </span>
+                    {% elif level == 1 %}
+                        <span class="radon-range-normal">
+                            <b><center><font size="20">Normal</font></center></b>
+                          </span>
+                    {% elif level == 2 %}
+                        <span class="radon-range-warn">
+                            <b><center><font size="20">Bad</font></center></b>
+			            </span>
+                    {% else  %}
+                        <span class="radon-range-disconn">
+                            <b><center><font size="20">Worst</font></center></b>
+                          </span>
+                    {% endif %}
+            <h2 class="MOD_TEXTACCORDION_Title" data-theme="_bb2">Prediction of Rancidity</h2>
+                    <span>
+                      {% if prediction <= 14 %}
+                        <span class="radon-range-good">
+                            <b><center><font size="20">Good</font></center></b>
+                          </span>
+                    {% elif prediction > 14 and prediction <= 22 %}
+                        <span class="radon-range-normal">
+                            <b><center><font size="20">Normal</font></center></b>
+                          </span>
+                    {% elif prediction > 22 and prediction <= 24 %}
+                        <span class="radon-range-warn">
+                            <b><center><font size="20">Bad</font></center></b>
+			            </span>
+                    {% else  %}
+                        <span class="radon-range-disconn">
+                            <b><center><font size="20">Worst</font></center></b>
+                          </span>
+                    {% endif %}
+
+			            </span>
+
+
+            <h2 class="MOD_TEXTACCORDION_Title" data-theme="_bb2">Rancidity Level</h2>
+            <span class="radon-range-good">
+                <i class="fa fa-circle" aria-hidden="true">
+                    <label>Good</label>
+                </i>
+			  </span>
+            <span class="radon-range-normal">
+                <i class="fa fa-circle" aria-hidden="true">
+                    <label>Normal</label>
+                </i>
+			  </span>
+            <span class="radon-range-warn">
+                <i class="fa fa-circle" aria-hidden="true">
+                    <label>Bad</label>
+                </i>
+			  </span>
+            <span class="radon-range-disconn">
+                <i class="fa fa-circle" aria-hidden="true">
+                    <label>Worst</label>
+                </i>
+			  </span>
+        </div>
+        <div data-layout="de10">
+            <div class="AP_accordion" role="tablist">
+                <p class="AP_accordion_tab" role="tab" data-theme="_bgp" tabindex="0"><b>Device Information</b></p>
+                <div class="AP_accordion_panel" role="tabpanel">
+                    <br>
+                    <section class="row" id="device-information">
+                        <div class="col-sm-6">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td><b>Station:</b></td>
+                                    <td class="sn-value">{{station}}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Location:</b></td>
+                                    <td class="location-value">치킨마루 광운대점</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Date Time:</b></td>
+                                    <td class="dt-value">{{submit_date}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="radonbq-key"><b>Rancidity:</b></td>
+                                    <td class="radonbq-value">{{tpm}}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Process Time:</b></td>
+                                    <td class="processtime-value">--d --h --m</td>
+                                </tr>
+                                <tr>
+                                    <td class="temp-key"><b>Temperature:</b></td>
+                                    <td class="temp-value">{{temp}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-6">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td class="device-unit-key"><b>Unit:</b></td>
+                                    <td class="device-unit-value">TPM(%)</td>
+                                </tr>
+                                <tr>
+                                    <td class="today-avg-key"><b>Avg. Today:</b></td>
+                                    <td class="today-avg-value">{{date_today}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="yesterday-avg-key"><b>Avg. Yesterday:</b></td>
+                                    <td class="yesterday-avg-value">{{date_yesterday}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="days-7-avg-key"><b>Avg. 7days:</b></td>
+                                    <td class="days-7-avg-value">{{date_7day}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="days-30-avg-key"><b>Avg. 30days:</b></td>
+                                    <td class="days-30-avg-value">{{date_30day}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="days-90-avg-key"><b>Avg. 90days:</b></td>
+                                    <td class="days-90-avg-value">{{date_90day}}</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+                <p class="AP_accordion_tab" role="tab" data-theme="_bgp" tabindex="0"><b>Device Logs (per 30min)</b></p>
+                <div class="AP_accordion_panel" role="tabpanel">
+                    <br>
+                    <!--form action = "http://idas.gachon.ac.kr/main/info" target="container" method="POST">
+                        {% csrf_token %}
+                        <input type="text" id="datepicker1">
+                        <input type="text" id="datepicker2">
+                        <button type="submit"> Search </button>
+                    </form-->
+                    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    <br>
+                </div>
+
+                </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="container">
+    <!-- Copyright -->
+    <div id="copyright">
+        <ul class="menu">
+            </ul>
+    </div>
+</footer>
+
+
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/skel.min.js' %}"></script>
+<script src="{% static 'assets/js/skel-viewport.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="{% static 'assets/js/main.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+
+<!--
+<script src="{% static 'assets/js/index.js' %}"></script>
+-->
+<script type="text/javascript" charset="euc-kr">
+setTimeout("location.reload()",15000);
+Highcharts.setOptions({
+		  global: {
+		      useUTC: false
+			    }
+				});
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'spline',
+        marginRight: 10,
+    },
+    title: {
+        text: '{{station}}'
+    },
+    xAxis: {
+        type: 'datetime',
+        categories: {{chart_x|safe}}
+    },
+    yAxis: {
+    title: {
+        text: 'Value'
+    },
+    plotLines: [{
+        value: 0,
+        width: 1,
+        color: '#808080'
+    }]
+    },
+
+    legend: {
+        enabled: false
+    },
+    exporting: {
+    enabled: false
+    },
+    series: [{
+        name: 'Rancidity',
+        data: {{chart_y|safe}}
+    }]
+});
+
+		$("#datepicker1").datepicker({
+		numberOfMonths: 2,
+		onSelect: function(selected) {
+		$("#datepicker2").datepicker("option","minDate", selected)
+		}
+		}).datepicker("setDate", "0");
+		$("#datepicker2").datepicker({
+		numberOfMonths: 2,
+		onSelect: function(selected) {
+		$("#datepicker1").datepicker("option","maxDate", selected)
+		}
+		}).datepicker("setDate", "0");
+
+		function myMap() {
+    var mapOptions = {
+        center: new google.maps.LatLng(51.5, -0.12),
+        zoom: 10,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    }
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+
+</script>
+
+</body>
+</html>

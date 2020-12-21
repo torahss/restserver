@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+{% load staticfiles %}
+
+<html>
+<body>
+<script>
+    var today = new Date()
+    var dd = today.getDate();
+    var mm = today.getMonth()+1;
+    var yyyy = today.getFullYear();
+    if(dd<10){
+    dd='0'+dd;
+    }
+    if(mm<10){
+    mm='0'+mm;
+    }
+    today = yyyy + "년" + mm + "월" + dd + "일";
+    document.write(today);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	    <title>Title</title>
+</head>
+		<body>
+        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+{% load staticfiles %}
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/skel.min.js' %}"></script>
+<script src="{% static 'assets/js/skel-viewport.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js}"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+
+<!--
+<script src="assets/js/index.js}"></script>
+-->
+<script type="text/javascript" charset="euc-kr">
+
+Highcharts.setOptions({
+		  global: {
+		      useUTC: false
+			    }
+				});
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'spline',
+        animation: Highcharts.svg, // don't animate in old IE
+        marginRight: 10,
+    },
+    title: {
+        text: '{{station}}'
+    },
+    xAxis: {
+        type: 'datetime',
+        categories: {{chart_x|safe}}
+    },
+    yAxis: {
+    title: {
+        text: 'Value'
+    },
+    plotLines: [{
+        value: 0,
+        width: 1,
+        color: '#808080'
+    }]
+    },
+
+    legend: {
+        enabled: false
+    },
+    exporting: {
+    enabled: false
+    },
+    series: [{
+        name: 'Rancidity',
+        data: {{chart_y|safe}}
+    }]
+});
+
+
+		$("#datepicker1").datepicker({
+		numberOfMonths: 2,
+		onSelect: function(selected) {
+		$("#datepicker2").datepicker("option","minDate", selected)
+		}
+		}).datepicker("setDate", "0");
+		$("#datepicker2").datepicker({
+		numberOfMonths: 2,
+		onSelect: function(selected) {
+		$("#datepicker1").datepicker("option","maxDate", selected)
+		}
+		}).datepicker("setDate", "0");
+
+</script>
+				</body>
+</html>
+

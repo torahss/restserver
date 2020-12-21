@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8" name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=d    evice-width, height=device-height">
+	 <title>Monitoring</title>
+	 <style>
+		.iframe100 {   display: block;   border: none;   height: 100vh;   width: 100vw; }
+	</style>
+	<script>
+		var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson','Windows Phone');
+		for (var word in mobileKeyWords){
+			if (navigator.userAgent.match(mobileKeyWords[word]) != null){
+			location.href = "http://idas.gachon.ac.kr/monitoring_app/";
+			break;
+			}
+		l}
+	</script>
+</head>
+<body>
+
+	<div id = "dashboard">
+						      <!--<p><iframe src="http://idas.gachon.ac.kr:9600/goto/678bf040b7413a95e0bf7492310b6aeb?embed=true" height="600"     width="1280" frameborder = "0" align = "middle"></iframe></p>-->
+							  
+	<iframe src="http://idas.gachon.ac.kr:9600/app/kibana#/dashboard/cb6bbcd0-b9dc-11e9-b2ca-71d44f33a392?embed=true&_g=(refreshInterval%3A(display%3A'30%20seconds'%2Cpause%3A!f%2Csection%3A1%2Cvalue%3A30000)%2Ctime%3A(from%3Anow%2Fw%2Cmode%3Aquick%2Cto%3Anow%2Fw))" 
+	class = "iframe100">
+		</iframe>
+
+		</div>
+
+</body>
+</html>
+

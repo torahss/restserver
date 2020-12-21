@@ -1,0 +1,66 @@
+ This problem is unconstrained.
+ This problem is unconstrained.
+ This problem is unconstrained.
+ This problem is unconstrained.
+ This problem is unconstrained.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): auth.
+Run 'python manage.py migrate' to apply them.
+July 27, 2018 - 15:13:09
+Django version 2.0.7, using settings 'tutorial.settings'
+Starting development server at http://192.9.86.215:80/
+Quit the server with CONTROL-C.
+Accuracy : 0.97
+1
+[27/Jul/2018 15:13:10] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:13:25] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:13:40] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:13:56] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:14:11] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:14:26] "GET /main/info HTTP/1.1" 200 11078
+Not Found: /
+[27/Jul/2018 15:23:20] "GET / HTTP/1.1" 404 3047
+Accuracy : 0.97
+1
+[27/Jul/2018 15:37:33] "GET /main/info HTTP/1.1" 200 11078
+Not Found: /favicon.ico
+[27/Jul/2018 15:37:34] "GET /favicon.ico HTTP/1.1" 404 3097
+Accuracy : 0.97
+1
+[27/Jul/2018 15:37:51] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:39:08] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:39:25] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:39:48] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:40:35] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:41:36] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:42:45] "GET /main/info HTTP/1.1" 200 11078
+Accuracy : 0.97
+1
+[27/Jul/2018 15:46:24] "GET /main/info HTTP/1.1" 200 11078
+[27/Jul/2018 16:14:18] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[27/Jul/2018 16:14:18] "  /*à     Cookie: mstshash=Administr" 400 -
